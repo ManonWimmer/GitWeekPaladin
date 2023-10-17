@@ -79,13 +79,13 @@ public class PlayerController : MonoBehaviour
         }
 
         // Dash :
-        if (Input.GetKeyDown(KeyCode.Space) && _canDash)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _canDash)
         {
             _isChargingDash = true;
             StartCoroutine(ChargeDash());
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             _isChargingDash = false;
         }
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("charge dash");
         _currentChargeTime = 0.0f;
 
-        while (Input.GetKey(KeyCode.Space) && _isChargingDash)
+        while (Input.GetKey(KeyCode.Mouse0) && _isChargingDash)
         {
             if (_currentChargeTime >= (_dashMaxDuration * 5)) // Max charge
             {

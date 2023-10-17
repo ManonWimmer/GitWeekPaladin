@@ -401,7 +401,7 @@ MonoBehaviour:
   _rb: {fileID: 1416090980}
   _moveSpeed: 10
   _camera: {fileID: 994966978}
-  _dashSpeed: 25
+  _dashSpeed: 30
   _dashMinDuration: 0.1
   _dashMaxDuration: 0.5
   _dashCooldown: 0
