@@ -155,10 +155,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021fa903642b3b947bc43eac6b8ad50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _crystal: {fileID: 0}
+  _crystal: {fileID: 1007241331}
   _moveSpeed: 5
-  _attackTrigger: {fileID: 0}
-  _lifeCrystal: 0
+  _attackTrigger: {fileID: 1662771146}
+  _lifeCrystal: 100
+  _enemy: {fileID: 244328771}
+  attackTrigger: {fileID: 1662771148}
 --- !u!212 &244328768
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -310,9 +312,10 @@ GameObject:
   - component: {fileID: 775312369}
   - component: {fileID: 775312368}
   - component: {fileID: 775312370}
+  - component: {fileID: 775312371}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -412,6 +415,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
+--- !u!114 &775312371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775312367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43008015e0d52b489c78621d668d81a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifeCrystal: 100
 --- !u!1 &994966976
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,8 +576,8 @@ GameObject:
   - component: {fileID: 1007241331}
   - component: {fileID: 1007241332}
   m_Layer: 0
-  m_Name: Cristal
-  m_TagString: Untagged
+  m_Name: Crystal
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -616,6 +632,83 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!1 &1328653430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1328653432}
+  - component: {fileID: 1328653431}
+  m_Layer: 0
+  m_Name: collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1328653431
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328653430}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1328653432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328653430}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1416090983}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1416090979
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,13 +770,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 1416090980}
   _moveSpeed: 10
-  _camera: {fileID: 0}
+  _camera: {fileID: 994966978}
   _dashSpeed: 10
   _dashMinDuration: 0.1
   _dashMaxDuration: 1
   _dashCooldown: 5
-  _collider: {fileID: 0}
-  _trigger: {fileID: 0}
+  _collider: {fileID: 1416090984}
+  _trigger: {fileID: 1328653431}
 --- !u!212 &1416090982
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -750,6 +843,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 994966979}
+  - {fileID: 1328653432}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1416090984
@@ -881,6 +975,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1662771147}
   - component: {fileID: 1662771146}
+  - component: {fileID: 1662771148}
   m_Layer: 0
   m_Name: attackTrigger
   m_TagString: Untagged
@@ -920,7 +1015,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.7619314, y: 0}
+  m_Offset: {x: -0.66114616, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -931,7 +1026,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5174427, y: 1}
+  m_Size: {x: 0.42150497, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &1662771147
 Transform:
@@ -948,6 +1043,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 244328769}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1662771148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662771145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17369ec07dc7a914eb1b8c632f001d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy1: {fileID: 244328766}
+  lifeCrystal: {fileID: 775312371}
+  isMoving: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
