@@ -168,6 +168,4 @@ public class PlayerController : MonoBehaviour
 
         EnableCollider();
     }
-
-
 }
