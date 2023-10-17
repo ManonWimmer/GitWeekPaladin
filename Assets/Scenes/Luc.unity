@@ -137,8 +137,8 @@ GameObject:
   - component: {fileID: 244328770}
   - component: {fileID: 244328771}
   m_Layer: 0
-  m_Name: Ennemi1
-  m_TagString: Ennemi
+  m_Name: Enemy1
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,10 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021fa903642b3b947bc43eac6b8ad50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crystal: {fileID: 1007241331}
+  _crystal: {fileID: 0}
   _moveSpeed: 5
-  zoneAttack: {fileID: 1662771146}
-  vieCrystal: 0
+  _attackTrigger: {fileID: 0}
+  _lifeCrystal: 0
 --- !u!212 &244328768
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -677,6 +677,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 1416090980}
   _moveSpeed: 10
+  _camera: {fileID: 0}
+  _dashSpeed: 10
+  _dashMinDuration: 0.1
+  _dashMaxDuration: 1
+  _dashCooldown: 5
+  _collider: {fileID: 0}
+  _trigger: {fileID: 0}
 --- !u!212 &1416090982
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -875,7 +882,7 @@ GameObject:
   - component: {fileID: 1662771147}
   - component: {fileID: 1662771146}
   m_Layer: 0
-  m_Name: Attaque
+  m_Name: attackTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
