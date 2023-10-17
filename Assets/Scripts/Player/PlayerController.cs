@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private LineRenderer _lineRendererDashLine;
 
+
     private bool _isDashing = false;
     private bool _canDash = true;
     private float _currentChargeTime = 0f;
@@ -71,15 +72,14 @@ public class PlayerController : MonoBehaviour
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
 
+
         // Mouse position :
         _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-     
+
 
         // Draw a line from the player to the future dash position while charging the dash.
         if (_isChargingDash)
         {
-            Debug.Log("ici");
-            
             //Debug.DrawLine(_rb.position, futureDashPosition, Color.red);
         }
 
