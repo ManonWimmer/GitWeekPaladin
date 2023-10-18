@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _moveSpeed;
     [SerializeField] Camera _camera;
 
+    // Anim :
+    //[SerializeField] Animator anim;
+
+    private bool _isFacingRight;
     private Vector2 _movement;
 
     // Mouse :
@@ -21,21 +25,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _dashMaxDuration = 1f;
     [SerializeField] float _dashCooldown = 5f;
 
+    [SerializeField] private LineRenderer _lineRendererDashLine;
+
+
     private bool _isDashing = false;
     private bool _canDash = true;
     private float _currentChargeTime = 0f;
     private float _lastDashTime = 0f;
     private bool _isChargingDash = false;
 
+
     // Collider / Trigger:
     [SerializeField] Collider2D _collider;
     [SerializeField] Collider2D _trigger;
+
 
     // ----- FIELDS ----- //
 
     private void Start()
     {
         EnableCollider();
+        _lineRendererDashLine.enabled = false;
     }
 
     private void EnableCollider()
@@ -48,6 +58,33 @@ public class PlayerController : MonoBehaviour
     {
         _collider.enabled = false;
         _trigger.enabled = true;
+    }
+
+    private void CheckMovementDirection()
+    {
+        if (_isFacingRight && _movement.x < 0) // Face à la droite mais va à gauche
+        {
+            Flip();
+        }
+        else if (!_isFacingRight && _movement.x > 0) // Face à la gauche mais va à droite
+        {
+            Flip();
+        }
+    }
+
+    private void Flip()
+    {
+        _isFacingRight = !_isFacingRight;
+        transform.Rotate(0.0f, 180.0f, 0.0f);  
+    }
+
+    private void UpdateAnimations()
+    {
+        /*
+        anim.SetFloat("xVelocity", _movement.x); // -1 gauche 0 statique 1 droite
+        anim.SetFloat("yVelocity", _movement.y); // -1 bas 0 statique 1 haut
+        anim.SetBool("isDashing", _isDashing);
+        */
     }
 
     private void Update()
@@ -66,26 +103,22 @@ public class PlayerController : MonoBehaviour
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
 
+
+        CheckMovementDirection();
+        UpdateAnimations();
+
         // Mouse position :
         _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-        //Debug.DrawLine(transform.position, _mousePosition);
-
-        Vector2 futureDashPosition = CalculateFutureDashPosition();
-
-        // Draw a line from the player to the future dash position while charging the dash.
-        if (_isChargingDash)
-        {
-            Debug.DrawLine(_rb.position, futureDashPosition, Color.red);
-        }
 
         // Dash :
-        if (Input.GetKeyDown(KeyCode.Space) && _canDash)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _canDash)
         {
+            _lineRendererDashLine.enabled = true;
             _isChargingDash = true;
             StartCoroutine(ChargeDash());
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             _isChargingDash = false;
         }
@@ -107,8 +140,13 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("charge dash");
         _currentChargeTime = 0.0f;
 
-        while (Input.GetKey(KeyCode.Space) && _isChargingDash)
+        while (Input.GetKey(KeyCode.Mouse0) && _isChargingDash)
         {
+            Vector2 futureDashPosition = CalculateFutureDashPosition();
+            _lineRendererDashLine.SetPosition(0, _rb.position);
+            _lineRendererDashLine.SetPosition(1, futureDashPosition);
+
+
             if (_currentChargeTime >= (_dashMaxDuration * 5)) // Max charge
             {
                 _currentChargeTime = (_dashMaxDuration * 5);
@@ -167,5 +205,6 @@ public class PlayerController : MonoBehaviour
         _lastDashTime = Time.time; // For cooldown
 
         EnableCollider();
+        _lineRendererDashLine.enabled = false;
     }
 }

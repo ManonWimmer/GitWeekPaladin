@@ -6,7 +6,12 @@ public class PlayerTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.CompareTag("Enemy"))
-        Debug.Log(collision.name);
+        if (collision.CompareTag("Enemy"))
+        {
+            // Damage enemy when script is done
+            // collision.Enemy.Damage();
+            Debug.Log($"Hit ennemy : {collision.name}");
+        }
+        
     }
 }
