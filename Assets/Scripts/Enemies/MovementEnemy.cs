@@ -7,7 +7,6 @@ public class MovementEnemy : MonoBehaviour
 {
     [SerializeField] int _moveSpeed;
     [SerializeField] Collider2D _attackTrigger;
-    [SerializeField] int _lifeCrystal;
     [SerializeField] Rigidbody2D _enemy;
     [SerializeField] AttackTrigger attackTrigger;
     private void FixedUpdate()

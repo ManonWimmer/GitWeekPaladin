@@ -103,7 +103,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 5
   _attackTrigger: {fileID: 3651252090093406036}
-  _lifeCrystal: 100
   _enemy: {fileID: 4642007899840898423}
   attackTrigger: {fileID: 8833592458394948134}
 --- !u!61 &4618878859286351073
@@ -283,3 +282,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy1: {fileID: 4321196616685881274}
   isMoving: 1
+  timeBeforeAttack: 3
