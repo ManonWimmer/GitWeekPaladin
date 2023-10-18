@@ -718,17 +718,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7155548165024112078, guid: 64b263edbde1c294a9ea9a1c62954323, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8787494345109269089, guid: 64b263edbde1c294a9ea9a1c62954323, type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 7204166419656438172, guid: 64b263edbde1c294a9ea9a1c62954323, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b263edbde1c294a9ea9a1c62954323, type: 3}
