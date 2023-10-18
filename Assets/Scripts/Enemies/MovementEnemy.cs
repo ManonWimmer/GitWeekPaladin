@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows;
 
-public class Enemy1 : MonoBehaviour
+public class MovementEnemy : MonoBehaviour
 {
     [SerializeField] int _moveSpeed;
     [SerializeField] Collider2D _attackTrigger;
