@@ -7,6 +7,7 @@ public class LifeEnemy : MonoBehaviour
 {
     [SerializeField] int _life;
     [SerializeField] Collider2D _colliderBlast;
+    bool inTrigger=false;
 
     public int Life { get => _life; private set => _life = value; }
 
@@ -21,11 +22,22 @@ public class LifeEnemy : MonoBehaviour
         if(life <= 0 && gameObject.CompareTag("EnemyBlast"))
         {
             _colliderBlast.gameObject.SetActive(true);
+            if(inTrigger)
+            
             Destroy(gameObject);
         }
         else if (life <= 0)
         {
             Destroy(gameObject);
+        }
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy") || collision.CompareTag("EnemyBlast"))
+        {
+            collision.GetComponent<LifeEnemy>().EnemyTakeDamage();
+            Debug.Log($"Hit ennemy : {collision.name}");
         }
 
     }
