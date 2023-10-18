@@ -9,6 +9,7 @@ public class PlayerTrigger : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             // Damage enemy when script is done
+            // collision.Enemy.Damage();
             Debug.Log($"Hit ennemy : {collision.name}");
         }
         

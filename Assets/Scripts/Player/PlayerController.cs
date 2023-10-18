@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _moveSpeed;
     [SerializeField] Camera _camera;
 
+    // Anim :
+    //[SerializeField] Animator anim;
+
+    private bool _isFacingRight;
     private Vector2 _movement;
 
     // Mouse :
@@ -56,6 +60,33 @@ public class PlayerController : MonoBehaviour
         _trigger.enabled = true;
     }
 
+    private void CheckMovementDirection()
+    {
+        if (_isFacingRight && _movement.x < 0) // Face à la droite mais va à gauche
+        {
+            Flip();
+        }
+        else if (!_isFacingRight && _movement.x > 0) // Face à la gauche mais va à droite
+        {
+            Flip();
+        }
+    }
+
+    private void Flip()
+    {
+        _isFacingRight = !_isFacingRight;
+        transform.Rotate(0.0f, 180.0f, 0.0f);  
+    }
+
+    private void UpdateAnimations()
+    {
+        /*
+        anim.SetFloat("xVelocity", _movement.x); // -1 gauche 0 statique 1 droite
+        anim.SetFloat("yVelocity", _movement.y); // -1 bas 0 statique 1 haut
+        anim.SetBool("isDashing", _isDashing);
+        */
+    }
+
     private void Update()
     {
         if (_isDashing)
@@ -73,15 +104,11 @@ public class PlayerController : MonoBehaviour
         _movement.y = Input.GetAxisRaw("Vertical");
 
 
+        CheckMovementDirection();
+        UpdateAnimations();
+
         // Mouse position :
         _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-
-
-        // Draw a line from the player to the future dash position while charging the dash.
-        if (_isChargingDash)
-        {
-            //Debug.DrawLine(_rb.position, futureDashPosition, Color.red);
-        }
 
         // Dash :
         if (Input.GetKeyDown(KeyCode.Mouse0) && _canDash)
