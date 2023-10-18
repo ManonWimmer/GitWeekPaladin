@@ -5,21 +5,30 @@ using UnityEngine.Windows;
 
 public class Enemy1 : MonoBehaviour
 {
-    [SerializeField] Transform _crystal;
     [SerializeField] int _moveSpeed;
     [SerializeField] Collider2D _attackTrigger;
     [SerializeField] int _lifeCrystal;
-    [SerializeField] public Rigidbody2D _enemy;
+    [SerializeField] Rigidbody2D _enemy;
     [SerializeField] AttackTrigger attackTrigger;
     private void FixedUpdate()
     {
-        if (attackTrigger.isMoving==true)
+        if (attackTrigger.isMoving)
         {
-            Vector3 direction = _crystal.position - transform.position;
+            Vector3 direction = LifeCrystal.Instance.transform.position - transform.position;
             direction.Normalize();
             transform.position += direction * _moveSpeed * Time.fixedDeltaTime;
+            if (direction.x > 0)
+            {
+                _attackTrigger.offset = new Vector2(0.7f,0);
+            }
+            
         }
-        
+        if (attackTrigger.isMoving == false)
+        {
+            _enemy.constraints= RigidbodyConstraints2D.FreezeAll;
+        }
+
+
     }
 }
 
