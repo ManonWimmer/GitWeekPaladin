@@ -14,4 +14,5 @@ public class ActivationBlast : MonoBehaviour
             blast.SetActive(true);
         }
     }
+
 }
