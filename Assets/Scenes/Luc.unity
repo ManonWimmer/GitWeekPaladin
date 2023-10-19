@@ -397,13 +397,14 @@ GameObject:
   m_Component:
   - component: {fileID: 465560808}
   - component: {fileID: 465560807}
+  - component: {fileID: 465560809}
   m_Layer: 0
   m_Name: Blast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &465560807
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -411,7 +412,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465560806}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -433,7 +434,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.386878, y: 0}
@@ -454,6 +455,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6146657646443793967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &465560809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465560806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9fec6bb31350c247964aeffc5bd45d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colliderBlast: {fileID: 465560807}
 --- !u!1 &467219336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,7 +1461,7 @@ PrefabInstance:
     - target: {fileID: 8948967748151611496, guid: 52b608bb9062b404998266c993f768f7, type: 3}
       propertyPath: _colliderBlast
       value: 
-      objectReference: {fileID: 465560807}
+      objectReference: {fileID: 465560806}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1467,6 +1481,7 @@ GameObject:
   - component: {fileID: 8159984440257214450}
   - component: {fileID: 8163938516313513572}
   - component: {fileID: 5554773994494552955}
+  - component: {fileID: 8163938516313513573}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: EnemyBlast
@@ -1502,7 +1517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _life: 3
-  _colliderBlast: {fileID: 465560807}
+  blast: 0
 --- !u!4 &6146657646443793967
 Transform:
   m_ObjectHideFlags: 0
@@ -1607,6 +1622,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8163938516313513573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4193743320569685856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a2e9edebdd3b94eb6287b79e7bdf1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blast: {fileID: 465560806}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class LifeEnemy : MonoBehaviour
 {
+    public static LifeEnemy Instance { get; private set;}
     [SerializeField] int _life;
-    [SerializeField] Collider2D _colliderBlast;
     bool inTrigger=false;
-
+    public bool blast=false;
+    private void Awake()
+    {
+        Instance = this; 
+    }
+    
     public int Life { get => _life; private set => _life = value; }
 
     public void EnemyTakeDamage()
@@ -21,24 +26,13 @@ public class LifeEnemy : MonoBehaviour
     {
         if(life <= 0 && gameObject.CompareTag("EnemyBlast"))
         {
-            _colliderBlast.gameObject.SetActive(true);
-            if(inTrigger)
-            
-            Destroy(gameObject);
+            blast = true;
         }
         else if (life <= 0)
         {
             Destroy(gameObject);
         }
-
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy") || collision.CompareTag("EnemyBlast"))
-        {
-            collision.GetComponent<LifeEnemy>().EnemyTakeDamage();
-            Debug.Log($"Hit ennemy : {collision.name}");
-        }
 
-    }
+    
 }
