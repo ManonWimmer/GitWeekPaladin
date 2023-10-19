@@ -12,14 +12,15 @@ public struct Wave
 {
     public int EnemiesToSpawn;
     public float TimeBetweenEachSpawn;
+    public GameObject[] EnemiesPrefabs;
 }
 
 public class EnemiesWavesSpawn : MonoBehaviour
 {
+    // ----- FIELDS ----- //
     [SerializeField] Transform[] _spawnZones;
     [SerializeField] Wave[] _waves;
-    [SerializeField] GameObject[] _enemiesPrefabs;
-    private bool _coroutineRunning = false;
+    // ----- FIELDS ----- //
 
     private void Start()
     {
@@ -38,17 +39,18 @@ public class EnemiesWavesSpawn : MonoBehaviour
 
     IEnumerator StartWave(int waveNumber)
     {
-        _coroutineRunning = true;
-
+        // Wave parameters :
         int enemiesToSpawn = _waves[waveNumber].EnemiesToSpawn;
         float timeBetweenEachSpawn = _waves[waveNumber].TimeBetweenEachSpawn;
+        GameObject[] waveEnemiesPrefabs = _waves[waveNumber].EnemiesPrefabs;
 
         for (int i = 0; i < enemiesToSpawn; i++)
         {
             Debug.Log($"For start wave : {i}");
+
             // Random enemy :
-            int randomEnemyIndex = Random.Range(0, (_enemiesPrefabs.Length));
-            GameObject enemyRandom = _enemiesPrefabs[randomEnemyIndex];
+            int randomEnemyIndex = Random.Range(0, (waveEnemiesPrefabs.Length));
+            GameObject enemyRandom = waveEnemiesPrefabs[randomEnemyIndex];
 
             // Random spawn zone :
             int randomZoneIndex = Random.Range(0, (_spawnZones.Length));
@@ -60,8 +62,6 @@ public class EnemiesWavesSpawn : MonoBehaviour
             // Wait before new spawn :
             yield return new WaitForSeconds(timeBetweenEachSpawn);
         }
-
-        _coroutineRunning = false;
         yield return null;
     }
 
