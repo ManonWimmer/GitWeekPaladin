@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Camera _camera;
 
     // Anim :
-    //[SerializeField] Animator anim;
+    [SerializeField] Animator anim;
 
     private bool _isFacingRight;
     private Vector2 _movement;
@@ -80,11 +80,11 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateAnimations()
     {
-        /*
-        anim.SetFloat("xVelocity", _movement.x); // -1 gauche 0 statique 1 droite
-        anim.SetFloat("yVelocity", _movement.y); // -1 bas 0 statique 1 haut
+        anim.SetInteger("xMovement", (int)_movement.x); // -1 gauche 0 statique 1 droite
+        anim.SetInteger("yMovement", (int)_movement.y); // -1 bas 0 statique 1 haut
         anim.SetBool("isDashing", _isDashing);
-        */
+        anim.SetFloat("xDashVelocity", -_rb.velocity.x); 
+        anim.SetFloat("yDashVelocity", -_rb.velocity.y); 
     }
 
     private void Update()
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
         _movement.y = Input.GetAxisRaw("Vertical");
 
 
-        CheckMovementDirection();
+        //CheckMovementDirection();
         UpdateAnimations();
 
         // Mouse position :
@@ -122,6 +122,8 @@ public class PlayerController : MonoBehaviour
         {
             _isChargingDash = false;
         }
+
+        UpdateAnimations();
     }
 
     private Vector2 CalculateFutureDashPosition()
@@ -193,6 +195,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("distance : " + dashDuration);
 
         _isDashing = true;
+        UpdateAnimations();
 
         // Dash :
         EnableTrigger();
@@ -203,6 +206,7 @@ public class PlayerController : MonoBehaviour
         _isDashing = false;
         _canDash = false;
         _lastDashTime = Time.time; // For cooldown
+        UpdateAnimations();
 
         EnableCollider();
         _lineRendererDashLine.enabled = false;
