@@ -26,8 +26,6 @@ public class MovementEnemy : MonoBehaviour
         {
             _enemy.constraints= RigidbodyConstraints2D.FreezeAll;
         }
-
-
     }
 }
 

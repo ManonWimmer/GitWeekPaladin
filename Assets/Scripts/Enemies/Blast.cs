@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Blast : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Collider2D _colliderBlast;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Enemy") || collision.CompareTag("EnemyBlast"))
+        {
+            collision.GetComponent<LifeEnemy>().EnemyTakeDamage();
+            Debug.Log("Explosion");
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
