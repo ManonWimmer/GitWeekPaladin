@@ -259,7 +259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 15}
   m_SizeDelta: {x: 450, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554650346
@@ -377,6 +377,7 @@ GameObject:
   - component: {fileID: 728097506}
   - component: {fileID: 728097505}
   - component: {fileID: 728097504}
+  - component: {fileID: 728097507}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -402,7 +403,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -200, y: -625.4}
-  m_SizeDelta: {x: 350, y: 100}
+  m_SizeDelta: {x: 370.7, y: 126.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &728097504
 MonoBehaviour:
@@ -447,7 +448,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 728097505}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 728097507}
+        m_TargetAssemblyTypeName: LoadingScene, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &728097505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +499,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728097502}
   m_CullTransparentMesh: 1
+--- !u!114 &728097507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728097502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62122527c2b58584c81080049c559378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: balthazar
 --- !u!1 &899025441
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +668,7 @@ GameObject:
   - component: {fileID: 1191202036}
   - component: {fileID: 1191202035}
   - component: {fileID: 1191202034}
+  - component: {fileID: 1191202037}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -667,7 +694,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -946, y: -641}
-  m_SizeDelta: {x: 350, y: 100}
+  m_SizeDelta: {x: 387.1, y: 123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1191202034
 MonoBehaviour:
@@ -712,7 +739,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1191202035}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1191202037}
+        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1191202035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,6 +790,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191202032}
   m_CullTransparentMesh: 1
+--- !u!114 &1191202037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191202032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270ef0dd0f91bb647af31a638437b78c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1563241007
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 6}
   m_SizeDelta: {x: 450, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1579273733
