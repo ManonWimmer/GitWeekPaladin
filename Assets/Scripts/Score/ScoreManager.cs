@@ -14,7 +14,14 @@ public class ScoreManager : MonoBehaviour
     private float _currentScore = 0f;
     private float _numberOfEnemyKilled;
     private float _totalEnemiesEndGame;
+
+    public static ScoreManager Instance;
     // ----- FIELDS ----- //
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
