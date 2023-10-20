@@ -49,8 +49,10 @@ public class ScoreManager : MonoBehaviour
 
     private void CheckVictory()
     {
+        Debug.Log(_totalEnemiesEndGame - _numberOfEnemyKilled);
         if (_numberOfEnemyKilled == _totalEnemiesEndGame)
         {
+            
             _loadingVictoryScene.LoadScene();
         }
     }
