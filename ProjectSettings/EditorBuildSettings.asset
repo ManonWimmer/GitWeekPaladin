@@ -6,15 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/Scene_Finished/MainMenu_Finished.unity
+    guid: dba12bf51876b924e994396e62b04454
   - enabled: 1
-    path: Assets/Scenes/Manon.unity
-    guid: 76ff00d021028c64683c225e1fe8bec4
+    path: Assets/Scenes/balthazar.unity
+    guid: 0d9ca719b6baffa4c9965670b3b2e0db
+  - enabled: 1
+    path: Assets/Scenes/Scene_Finished/DefeatScene_Finished.unity
+    guid: 0fee82819db707244a15a0c6d10f1777
+  - enabled: 1
+    path: Assets/Scenes/Scene_Finished/VictoryScene_Finished.unity
+    guid: d994d070924983942b1ea34c3b259035
   - enabled: 1
     path: Assets/Scenes/DefeatScene.unity
     guid: f296714ff4e1b28428900f8377bbec6c
   - enabled: 1
-    path: Assets/Scenes/balthazar.unity
-    guid: 0d9ca719b6baffa4c9965670b3b2e0db
+    path: Assets/Scenes/Manon.unity
+    guid: 76ff00d021028c64683c225e1fe8bec4
   m_configObjects: {}

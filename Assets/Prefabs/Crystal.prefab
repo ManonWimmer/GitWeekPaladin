@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62122527c2b58584c81080049c559378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: DefeatScene
+  _sceneName: DefeatScene_Finished
 --- !u!1 &8697849842412413505
 GameObject:
   m_ObjectHideFlags: 0
