@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivcationBlast : MonoBehaviour
+public class ActivationBlast : MonoBehaviour
 {
     [SerializeField] private GameObject blast;
+    [SerializeField] LifeEnemy _l;
 
     private void Update()
     {
-        if (LifeEnemy.Instance.blast == true)
+        if (_l.blast)
         {
+            Debug.Log("in");
             blast.SetActive(true);
         }
     }
+
 }

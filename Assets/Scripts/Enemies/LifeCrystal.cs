@@ -8,6 +8,7 @@ public class LifeCrystal : MonoBehaviour
     public static LifeCrystal Instance;
     [SerializeField] int _lifeCrystal;
     [SerializeField] Slider slider;
+    [SerializeField] LoadingScene _loadingDefeatScene;
 
     public int lifeCrystal { get => _lifeCrystal; private set => _lifeCrystal = value; }
 
@@ -20,6 +21,12 @@ public class LifeCrystal : MonoBehaviour
     {
 
         lifeCrystal-=damage;
+
+        // Check Defeat :
+        if (lifeCrystal <= 0)
+        {
+            _loadingDefeatScene.LoadScene();
+        }
     }
     private void Update()
     {
