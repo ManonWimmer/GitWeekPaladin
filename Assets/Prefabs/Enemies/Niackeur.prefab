@@ -102,9 +102,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 3
-  _attackTrigger: {fileID: 5002015603597184257}
-  _enemy: {fileID: 7658808757006631505}
-  attackTrigger: {fileID: 4884544841077834832}
+  _trigger: {fileID: 5002015603597184257}
+  _rb: {fileID: 7658808757006631505}
+  _attackTriggerScript: {fileID: 4884544841077834832}
+  _spriteRenderer: {fileID: 0}
+  _anim: {fileID: 0}
 --- !u!61 &7572286478702469314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -191,6 +193,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _life: 1
   blast: 0
+  _attackTrigger: {fileID: 0}
+  _enemyScore: 0
 --- !u!1 &5887656219005133518
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +285,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17369ec07dc7a914eb1b8c632f001d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy1: {fileID: 3896492394790876505}
   isMoving: 1
-  _timeBeforeAttack: 2
+  _enemy: {fileID: 1902810961818850523}
   _enemyForce: 1
+  IsDead: 0
+  _animationDeadTime: 0.85
+  _animationExplosionTime: 0.85
+  _lifeEnemy: {fileID: 6635224900903988564}
+  IsExploded: 0

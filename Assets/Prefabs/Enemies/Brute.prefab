@@ -311,7 +311,7 @@ MonoBehaviour:
   _enemy: {fileID: 4700429013168435909}
   _enemyForce: 5
   IsDead: 0
-  _animationDeadTime: 0
+  _animationDeadTime: 0.75
   _animationExplosionTime: 0.85
   _lifeEnemy: {fileID: 0}
   IsExploded: 0
