@@ -20,7 +20,6 @@ public class MovementEnemy : MonoBehaviour
             {
                 _attackTrigger.offset = new Vector2(0.7f,0);
             }
-            
         }
         if (attackTrigger.isMoving == false)
         {

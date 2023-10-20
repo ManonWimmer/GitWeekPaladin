@@ -12,6 +12,7 @@ public struct Wave
 {
     public int EnemiesToSpawn;
     public float TimeBetweenEachSpawn;
+    public float TimeAfterAllSpawns;
     public GameObject[] EnemiesPrefabs;
 }
 
@@ -35,6 +36,7 @@ public class EnemiesWavesSpawn : MonoBehaviour
             yield return StartCoroutine(StartWave(_currentWave));
         }
         yield return null;
+        //  Toutes les vagues sont finies = Victory ? -> Victory screen, non c'est pas fini les ennemis ont juste appar -> Score manager
     }
 
     IEnumerator StartWave(int waveNumber)
@@ -62,8 +64,24 @@ public class EnemiesWavesSpawn : MonoBehaviour
             // Wait before new spawn :
             yield return new WaitForSeconds(timeBetweenEachSpawn);
         }
-        yield return null;
+
+        yield return new WaitForSeconds(_waves[waveNumber].TimeAfterAllSpawns); // Time after all spawns
+        
     }
+
+    public int GetTotalEnemiesInGame()
+    {
+        int totalEnemies = 0;
+
+        foreach (Wave wave in _waves) 
+        {
+            totalEnemies += wave.EnemiesToSpawn;
+        }
+
+        return totalEnemies;
+    }
+
+
 
 }
 
