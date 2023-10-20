@@ -5,10 +5,11 @@ using UnityEngine;
 public class ActivationBlast : MonoBehaviour
 {
     [SerializeField] private GameObject blast;
+    [SerializeField] LifeEnemy _l;
 
     private void Update()
     {
-        if (LifeEnemy.Instance.blast)
+        if (_l.blast)
         {
             Debug.Log("in");
             blast.SetActive(true);

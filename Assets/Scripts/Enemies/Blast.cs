@@ -18,7 +18,6 @@ public class Blast : MonoBehaviour
     }
     IEnumerator CoroutineBlast()
     {
-
         yield return new WaitForSeconds(1.0f);
     }
 }

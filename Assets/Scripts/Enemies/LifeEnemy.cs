@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LifeEnemy : MonoBehaviour
 {
-    public static LifeEnemy Instance { get; private set;}
+    public static LifeEnemy Instance { get; private set; }
     [SerializeField] int _life;
     bool inTrigger=false;
     public bool blast=false;

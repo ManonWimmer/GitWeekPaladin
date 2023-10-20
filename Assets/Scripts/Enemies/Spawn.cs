@@ -9,8 +9,9 @@ public class Spawn : MonoBehaviour
     [SerializeField] GameObject Zone2;
     [SerializeField] GameObject Zone3;
     [SerializeField] GameObject Zone4;
-    [SerializeField] GameObject Prefab;
-    
+    [SerializeField] GameObject PrefabEnemy1;
+    [SerializeField] GameObject PrefabEnemy2;
+
     IEnumerator CouroutineEnemy1()
     {
         yield return new WaitForSeconds(5f);
