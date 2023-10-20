@@ -15,22 +15,22 @@ public class Spawn : MonoBehaviour
     IEnumerator CouroutineEnemy1()
     {
         yield return new WaitForSeconds(5f);
-        Instantiate(Prefab, Zone1.transform.position, Quaternion.identity);
+        Instantiate(PrefabEnemy1, Zone1.transform.position, Quaternion.identity);
     }
     IEnumerator CouroutineEnemy2()
     {
         yield return new WaitForSeconds(5f);
-        Instantiate(Prefab, Zone2.transform.position, Quaternion.identity);
+        Instantiate(PrefabEnemy2, Zone2.transform.position, Quaternion.identity);
     }
     IEnumerator CouroutineEnemy3()
     {
         yield return new WaitForSeconds(5f);
-        Instantiate(Prefab, Zone3.transform.position, Quaternion.identity);
+        Instantiate(PrefabEnemy1, Zone3.transform.position, Quaternion.identity);
     }
     IEnumerator CouroutineEnemy4()
     {
         yield return new WaitForSeconds(5f);
-        Instantiate(Prefab, Zone4.transform.position, Quaternion.identity);
+        Instantiate(PrefabEnemy2, Zone4.transform.position, Quaternion.identity);
     }
     private void FixedUpdate()
     {
