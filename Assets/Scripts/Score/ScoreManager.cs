@@ -66,15 +66,6 @@ public class ScoreManager : MonoBehaviour
     // Quand enemi die, avant de destroy : 
     // _scoreManager.OnEnemyKilled(_enemyScore);
 
-    // A ajouter dans le script lifeCrystal : 
-    // [SerializeField] LoadingScene _loadingScene; -> A mettre dans le gameObject avec comme valeur EndScene (rajouter le score ?)
-    //public void TakeDamage(int damage)
-    //{
 
-    //lifeCrystal -= damage;
-    //if (lifeCrystal <= 0)
-    //{
-    //_loadingScene.LoadScene();
-    //}
-    //}
+
 }
