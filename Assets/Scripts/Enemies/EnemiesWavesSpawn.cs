@@ -12,6 +12,7 @@ public struct Wave
 {
     public int EnemiesToSpawn;
     public float TimeBetweenEachSpawn;
+    public float TimeAfterAllSpawns;
     public GameObject[] EnemiesPrefabs;
 }
 
@@ -63,7 +64,9 @@ public class EnemiesWavesSpawn : MonoBehaviour
             // Wait before new spawn :
             yield return new WaitForSeconds(timeBetweenEachSpawn);
         }
-        yield return null;
+
+        yield return new WaitForSeconds(_waves[waveNumber].TimeAfterAllSpawns); // Time after all spawns
+        
     }
 
     public int GetTotalEnemiesInGame()

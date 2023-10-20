@@ -1096,6 +1096,14 @@ PrefabInstance:
       propertyPath: _spawnZones.Array.data[3]
       value: 
       objectReference: {fileID: 1798679457}
+    - target: {fileID: 1989288655870165644, guid: bb31c656081ba3e4ba6089ee8e93cf01, type: 3}
+      propertyPath: _waves.Array.data[0].TimeAfterAllSpawns
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989288655870165644, guid: bb31c656081ba3e4ba6089ee8e93cf01, type: 3}
+      propertyPath: _waves.Array.data[1].TimeAfterAllSpawns
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2572590001986969157, guid: bb31c656081ba3e4ba6089ee8e93cf01, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8031662
