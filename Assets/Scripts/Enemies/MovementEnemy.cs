@@ -9,9 +9,15 @@ public class MovementEnemy : MonoBehaviour
     [SerializeField] Collider2D _trigger;
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] AttackTrigger _attackTriggerScript;
+    [SerializeField] GameObject _fireBall;
 
     private bool _isFacingRight = false;
     [SerializeField] SpriteRenderer _spriteRenderer;
+
+    private void Awake()
+    {
+        _fireBall.SetActive(false);
+    }
 
     // Anim :
     [SerializeField] Animator _anim;
@@ -31,6 +37,8 @@ public class MovementEnemy : MonoBehaviour
         if (_attackTriggerScript.isMoving == false)
         {
             _rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            _fireBall.SetActive(true);
+
         }
     }
 
