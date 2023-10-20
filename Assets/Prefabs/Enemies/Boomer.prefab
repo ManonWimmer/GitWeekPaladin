@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021fa903642b3b947bc43eac6b8ad50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
+  _moveSpeed: 4
   _trigger: {fileID: 1145261501122674862}
   _rb: {fileID: 7813661080691683779}
   _attackTriggerScript: {fileID: 9062854883553646960}
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a236e3191076748479895ce485ab2c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 3
+  _life: 1
   blast: 0
   _attackTrigger: {fileID: 9062854883553646960}
   _enemyScore: 1
