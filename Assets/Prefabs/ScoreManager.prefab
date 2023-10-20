@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreMultiplier: 1.01
-  _scoreText: {fileID: 0}
   _enemiesWavesSpawn: {fileID: 0}
   _loadingVictoryScene: {fileID: 2671780995308715846}
 --- !u!114 &2671780995308715846
@@ -61,4 +60,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62122527c2b58584c81080049c559378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: EndScene
+  _sceneName: VictoryScene_Finished

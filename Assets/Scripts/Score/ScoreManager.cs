@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
 {
     // ----- FIELDS ----- //
     [SerializeField] float _scoreMultiplier = 1.05f;
-    [SerializeField] TMP_Text _scoreText;
+    //[SerializeField] TMP_Text _scoreText;
     [SerializeField] EnemiesWavesSpawn _enemiesWavesSpawn;
     [SerializeField] LoadingScene _loadingVictoryScene;
     private float _currentScore = 0f;
@@ -35,15 +35,17 @@ public class ScoreManager : MonoBehaviour
         _currentScore *= _scoreMultiplier;
         _numberOfEnemyKilled++; 
         //Debug.Log($"Current Score : {_currentScore}");
-        UpdateUIScore();
+        //UpdateUIScore();
         CheckVictory();
     }
 
+    /*
     private void UpdateUIScore()
     {
         _currentScore = (int)_currentScore;
         _scoreText.text = $"Score : {_currentScore.ToString()}";
     }
+    */
 
     private void CheckVictory()
     {
@@ -53,11 +55,13 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    /*
     // Save final score : 
     void OnDisable()
     {
         PlayerPrefs.SetInt("score", (int)_currentScore);
     }
+    */
 
     // A mettre dans pour récup le score dans le end menu :
     /*
