@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8188354498834005094}
   - component: {fileID: 5450097246926432135}
   - component: {fileID: 2030687349798577997}
+  - component: {fileID: 8286441709655260490}
   m_Layer: 0
   m_Name: Brute
   m_TagString: Enemy
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -101,12 +102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021fa903642b3b947bc43eac6b8ad50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 3
-  _trigger: {fileID: 0}
-  _rb: {fileID: 0}
-  _attackTriggerScript: {fileID: 0}
-  _spriteRenderer: {fileID: 0}
-  _anim: {fileID: 0}
+  _moveSpeed: 2
+  _trigger: {fileID: 8375322111190001480}
+  _rb: {fileID: 5450097246926432135}
+  _attackTriggerScript: {fileID: 5578106899579587541}
+  _spriteRenderer: {fileID: 1815085231777660319}
+  _anim: {fileID: 8286441709655260490}
 --- !u!61 &8188354498834005094
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -191,8 +192,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a236e3191076748479895ce485ab2c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 5
+  _life: 2
   blast: 0
+  _attackTrigger: {fileID: 5578106899579587541}
+  _enemyScore: 2
+--- !u!95 &8286441709655260490
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4700429013168435909}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 014f19678ab2859428102b5d382c86c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7563563738297541091
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +282,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.7, y: 0}
+  m_Offset: {x: -0.5374273, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -269,7 +293,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.42150497, y: 1}
+  m_Size: {x: 0.09645963, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &5578106899579587541
 MonoBehaviour:
@@ -286,3 +310,8 @@ MonoBehaviour:
   isMoving: 1
   _enemy: {fileID: 4700429013168435909}
   _enemyForce: 5
+  IsDead: 0
+  _animationDeadTime: 0.75
+  _animationExplosionTime: 0.85
+  _lifeEnemy: {fileID: 0}
+  IsExploded: 0
