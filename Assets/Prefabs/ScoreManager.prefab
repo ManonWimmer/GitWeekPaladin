@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4424640259788920210
+--- !u!1 &5786036825629182310
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6303447866257217336}
-  - component: {fileID: 8557888687999701476}
-  - component: {fileID: 1023119599361282675}
+  - component: {fileID: 7263616892844317904}
+  - component: {fileID: 6588980415556067126}
+  - component: {fileID: 2671780995308715846}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -18,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6303447866257217336
+--- !u!4 &7263616892844317904
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4424640259788920210}
+  m_GameObject: {fileID: 5786036825629182310}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.61632764, y: -0.051043004, z: 8.082891}
@@ -33,13 +33,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8557888687999701476
+--- !u!114 &6588980415556067126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4424640259788920210}
+  m_GameObject: {fileID: 5786036825629182310}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f13eb45b74a2314a817c54b09079ebc, type: 3}
@@ -48,17 +48,17 @@ MonoBehaviour:
   _scoreMultiplier: 1.01
   _scoreText: {fileID: 0}
   _enemiesWavesSpawn: {fileID: 0}
-  _loadingVictoryScene: {fileID: 1023119599361282675}
---- !u!114 &1023119599361282675
+  _loadingVictoryScene: {fileID: 2671780995308715846}
+--- !u!114 &2671780995308715846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4424640259788920210}
+  m_GameObject: {fileID: 5786036825629182310}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62122527c2b58584c81080049c559378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: DefeatScene
+  _sceneName: EndScene
