@@ -6,10 +6,10 @@ using UnityEngine;
 public class AttackTrigger : MonoBehaviour
 {
     public bool isMoving;
+
     [SerializeField] GameObject _enemy;
-
+    [SerializeField] GameObject _prefabFireBall;
     [SerializeField] int _enemyForce = 1;
-
     public bool IsDead = false;
     [SerializeField] float _animationDeadTime = 0.75f;
     [SerializeField] float _animationExplosionTime = 0.85f;
@@ -29,13 +29,16 @@ public class AttackTrigger : MonoBehaviour
             {
                 StartCoroutine(ExplosionDelay());
             }
+
+            else if(transform.parent.CompareTag("Sorcier"))
+            {
+                StartCoroutine(AttackSorcier());
+            }
             else
             {
                 StartCoroutine(DeadDelay());
 
             }
-
-            
             isMoving = false;
         }
     }
@@ -48,6 +51,15 @@ public class AttackTrigger : MonoBehaviour
         _lifeEnemy.blast = true;
         IsExploded = false;
         yield return StartCoroutine(DeadDelay());
+    }
+    
+    public IEnumerator AttackSorcier()
+    {
+
+        GameObject obj = Instantiate(_prefabFireBall,transform.position,Quaternion.identity);
+        obj.transform.SetParent(transform.parent);
+        yield return new WaitForSeconds(2.0f);
+        yield return StartCoroutine(AttackSorcier());
     }
 
     public IEnumerator DeadDelay()
