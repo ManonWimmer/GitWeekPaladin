@@ -234,6 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 517274654}
   - component: {fileID: 517274653}
+  - component: {fileID: 517274655}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -255,6 +256,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreMultiplier: 1.01
   _scoreText: {fileID: 1720796390}
+  _enemiesWavesSpawn: {fileID: 1991265688}
+  _loadingVictoryScene: {fileID: 517274655}
 --- !u!4 &517274654
 Transform:
   m_ObjectHideFlags: 0
@@ -270,6 +273,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &517274655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517274652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62122527c2b58584c81080049c559378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: EndScene
 --- !u!4 &577592609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5052911049147868538, guid: 584da6280ba4476458477f8b8dffc15c, type: 3}
@@ -920,6 +936,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1991265688 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1989288655870165644, guid: bb31c656081ba3e4ba6089ee8e93cf01, type: 3}
+  m_PrefabInstance: {fileID: 3402943148711799885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85fbbdc74b39da84c9764ae5a4274e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2046105062
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,6 +35,7 @@ public class EnemiesWavesSpawn : MonoBehaviour
             yield return StartCoroutine(StartWave(_currentWave));
         }
         yield return null;
+        //  Toutes les vagues sont finies = Victory ? -> Victory screen, non c'est pas fini les ennemis ont juste appar -> Score manager
     }
 
     IEnumerator StartWave(int waveNumber)
@@ -64,6 +65,20 @@ public class EnemiesWavesSpawn : MonoBehaviour
         }
         yield return null;
     }
+
+    public int GetTotalEnemiesInGame()
+    {
+        int totalEnemies = 0;
+
+        foreach (Wave wave in _waves) 
+        {
+            totalEnemies += wave.EnemiesToSpawn;
+        }
+
+        return totalEnemies;
+    }
+
+
 
 }
 
