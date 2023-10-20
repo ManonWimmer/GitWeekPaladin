@@ -12,11 +12,9 @@ public class ActivationBlast : MonoBehaviour
     {
         if (_l.blast)
         {
-            Debug.Log("in");
             _trigger.isMoving = false;
             blast.SetActive(true);
             
-
         }
     }
 
