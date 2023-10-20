@@ -17,9 +17,10 @@ public class Blast : MonoBehaviour
         {
             Debug.Log("Explosion");
             collision.GetComponent<LifeEnemy>().EnemyTakeBlast();
-            
 
+            
         }
+        gameObject.GetComponentInParent<LifeEnemy>().EnemyTakeBlast();
     }
     IEnumerator CoroutineBlast()
     {

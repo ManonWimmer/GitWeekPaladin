@@ -26,6 +26,7 @@ public class LifeEnemy : MonoBehaviour
         Life -= 3;
         EnemyDie(Life, false);
     }
+
     void EnemyDie(int life, bool allowBlast)
     {
         Debug.Log("enemy die");

@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021fa903642b3b947bc43eac6b8ad50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 8
+  _moveSpeed: 5
   _trigger: {fileID: 3146080485371011195}
   _rb: {fileID: 6224248283120828130}
   _attackTriggerScript: {fileID: 5210290496111518966}
@@ -264,10 +264,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a236e3191076748479895ce485ab2c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 2
+  _life: 1
   blast: 0
   _attackTrigger: {fileID: 5210290496111518966}
   _enemyScore: 0

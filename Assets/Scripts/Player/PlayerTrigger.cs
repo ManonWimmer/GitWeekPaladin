@@ -6,7 +6,7 @@ public class PlayerTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy")|| collision.CompareTag("EnemyBlast"))
+        if (collision.CompareTag("Enemy")|| collision.CompareTag("EnemyBlast") || collision.CompareTag("Sorcier"))
         {
             collision.GetComponent<LifeEnemy>().EnemyTakeDamage();
             Debug.Log($"Hit ennemy : {collision.name}");

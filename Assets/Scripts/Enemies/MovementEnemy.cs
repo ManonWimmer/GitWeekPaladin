@@ -53,6 +53,11 @@ public class MovementEnemy : MonoBehaviour
         {
             _anim.SetBool("isExploding", _attackTriggerScript.IsExploded);
         }
+        else if (gameObject.CompareTag("Sorcier"))
+        {
+            Debug.Log(_attackTriggerScript.isMoving);
+            _anim.SetBool("isMoving", _attackTriggerScript.isMoving);
+        }
 
         _anim.SetBool("isDead", _attackTriggerScript.IsDead);
     }
