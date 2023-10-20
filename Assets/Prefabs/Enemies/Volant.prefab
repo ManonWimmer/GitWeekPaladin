@@ -90,10 +90,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17369ec07dc7a914eb1b8c632f001d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy1: {fileID: 4098360415753126658}
   isMoving: 1
-  _timeBeforeAttack: 1
+  _enemy: {fileID: 2366777080992264376}
   _enemyForce: 1
+  IsDead: 0
+  _animationDeadTime: 0.75
+  _animationExplosionTime: 0.85
+  _lifeEnemy: {fileID: 2583252107556442124}
+  IsExploded: 0
 --- !u!1 &2366777080992264376
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +112,7 @@ GameObject:
   - component: {fileID: 5594594780264569487}
   - component: {fileID: 1251686248722614264}
   - component: {fileID: 2583252107556442124}
+  - component: {fileID: 1740243618061082219}
   m_Layer: 0
   m_Name: Volant
   m_TagString: Enemy
@@ -174,7 +179,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -196,9 +201,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 8
-  _attackTrigger: {fileID: 7279745063628682564}
-  _enemy: {fileID: 1251686248722614264}
-  attackTrigger: {fileID: 4434668227659844320}
+  _trigger: {fileID: 7279745063628682564}
+  _rb: {fileID: 1251686248722614264}
+  _attackTriggerScript: {fileID: 4434668227659844320}
+  _spriteRenderer: {fileID: 2350141487201145888}
+  _anim: {fileID: 1740243618061082219}
 --- !u!61 &5594594780264569487
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -283,5 +290,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a236e3191076748479895ce485ab2c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 1
+  _life: 2
   blast: 0
+  _attackTrigger: {fileID: 4434668227659844320}
+  _enemyScore: 5
+--- !u!95 &1740243618061082219
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2366777080992264376}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61d2f1dc5b329a147b61e5ac3f126986, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
