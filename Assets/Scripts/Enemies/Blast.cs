@@ -6,18 +6,25 @@ public class Blast : MonoBehaviour
 {
     [SerializeField] Collider2D _colliderBlast;
     [SerializeField] GameObject enemy;
+
+    void OnEnable()
+    {
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy") || collision.CompareTag("EnemyBlast"))
         {
-            collision.GetComponent<LifeEnemy>().EnemyTakeBlast();
             Debug.Log("Explosion");
-            StartCoroutine(CoroutineBlast());
-            Destroy(enemy);
+            collision.GetComponent<LifeEnemy>().EnemyTakeBlast();
+            
+
         }
     }
     IEnumerator CoroutineBlast()
     {
         yield return new WaitForSeconds(1.0f);
+
+        Destroy(enemy);
     }
 }

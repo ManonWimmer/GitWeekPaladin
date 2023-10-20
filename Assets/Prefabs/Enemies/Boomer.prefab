@@ -65,7 +65,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.7, y: 0}
+  m_Offset: {x: -0.52311003, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.42150497, y: 1}
+  m_Size: {x: 0.06772494, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &9062854883553646960
 MonoBehaviour:
@@ -90,10 +90,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17369ec07dc7a914eb1b8c632f001d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy1: {fileID: 8808883119130467777}
   isMoving: 1
-  _timeBeforeAttack: 1
+  _enemy: {fileID: 8866545093098537255}
   _enemyForce: 1
+  IsDead: 0
+  _animationDeadTime: 0.75
+  _animationExplosionTime: 0.85
+  _lifeEnemy: {fileID: 4161636137271166191}
+  IsExploded: 0
 --- !u!1 &5198916461183592227
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +165,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.4497027
+  m_Radius: 3.297749
 --- !u!114 &6105070461227564263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +195,7 @@ GameObject:
   - component: {fileID: 7813661080691683779}
   - component: {fileID: 4161636137271166191}
   - component: {fileID: 8043038718370044672}
+  - component: {fileID: 3869231717087750486}
   m_Layer: 0
   m_Name: Boomer
   m_TagString: EnemyBlast
@@ -258,7 +263,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -280,9 +285,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
-  _attackTrigger: {fileID: 1145261501122674862}
-  _enemy: {fileID: 7813661080691683779}
-  attackTrigger: {fileID: 9062854883553646960}
+  _trigger: {fileID: 1145261501122674862}
+  _rb: {fileID: 7813661080691683779}
+  _attackTriggerScript: {fileID: 9062854883553646960}
+  _spriteRenderer: {fileID: 7360027598703370689}
+  _anim: {fileID: 3869231717087750486}
 --- !u!61 &4163205013374850358
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -369,6 +376,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _life: 3
   blast: 0
+  _attackTrigger: {fileID: 9062854883553646960}
+  _enemyScore: 1
 --- !u!114 &8043038718370044672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,3 +392,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blast: {fileID: 5198916461183592227}
   _l: {fileID: 4161636137271166191}
+  _trigger: {fileID: 9062854883553646960}
+--- !u!95 &3869231717087750486
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866545093098537255}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 24edd368690c9c74c86c943b93a2766e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
