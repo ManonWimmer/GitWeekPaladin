@@ -21,7 +21,11 @@ public class LifeEnemy : MonoBehaviour
         Life -=1 ;
         EnemyDie(Life);
     }
-
+    public void EnemyTakeBlast()
+    {
+        Life -= 3;
+        EnemyDie(Life);
+    }
     void EnemyDie(int life)
     {
         if(life <= 0 && gameObject.CompareTag("EnemyBlast"))
@@ -33,6 +37,4 @@ public class LifeEnemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    
 }
