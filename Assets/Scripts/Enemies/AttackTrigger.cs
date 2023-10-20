@@ -11,7 +11,7 @@ public class AttackTrigger : MonoBehaviour
     [SerializeField] int _enemyForce = 1;
 
     public bool IsDead = false;
-    [SerializeField] float _animationDeadTime;
+    [SerializeField] float _animationDeadTime = 0.75f;
     [SerializeField] float _animationExplosionTime = 0.85f;
 
     [SerializeField] LifeEnemy _lifeEnemy;
@@ -53,7 +53,6 @@ public class AttackTrigger : MonoBehaviour
     public IEnumerator DeadDelay()
     {
         IsDead = true;
-        Debug.Log("dead delay");
         isMoving = false;
         IsExploded = false;
         yield return new WaitForSeconds(_animationDeadTime);

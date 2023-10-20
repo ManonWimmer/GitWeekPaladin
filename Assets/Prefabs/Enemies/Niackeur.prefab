@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7572286478702469314}
   - component: {fileID: 7658808757006631505}
   - component: {fileID: 6635224900903988564}
+  - component: {fileID: 5888681756314795018}
   m_Layer: 0
   m_Name: Niackeur
   m_TagString: Enemy
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -105,8 +106,8 @@ MonoBehaviour:
   _trigger: {fileID: 5002015603597184257}
   _rb: {fileID: 7658808757006631505}
   _attackTriggerScript: {fileID: 4884544841077834832}
-  _spriteRenderer: {fileID: 0}
-  _anim: {fileID: 0}
+  _spriteRenderer: {fileID: 7834030174344124911}
+  _anim: {fileID: 5888681756314795018}
 --- !u!61 &7572286478702469314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -193,8 +194,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _life: 1
   blast: 0
-  _attackTrigger: {fileID: 0}
-  _enemyScore: 0
+  _attackTrigger: {fileID: 4884544841077834832}
+  _enemyScore: 3
+--- !u!95 &5888681756314795018
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902810961818850523}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0012b45149807374481d35626358d4cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5887656219005133518
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +311,7 @@ MonoBehaviour:
   _enemy: {fileID: 1902810961818850523}
   _enemyForce: 1
   IsDead: 0
-  _animationDeadTime: 0.85
+  _animationDeadTime: 0.75
   _animationExplosionTime: 0.85
   _lifeEnemy: {fileID: 6635224900903988564}
   IsExploded: 0
