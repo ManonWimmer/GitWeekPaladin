@@ -92,12 +92,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMoving: 1
   _enemy: {fileID: 8866545093098537255}
-<<<<<<< HEAD
   _prefabFireBall: {fileID: 0}
   _enemyForce: 1
-=======
-  _enemyForce: 5
->>>>>>> balthazar
   IsDead: 0
   _animationDeadTime: 0.75
   _animationExplosionTime: 0.85
@@ -170,7 +166,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.29
+  m_Radius: 3.297749
 --- !u!114 &6105070461227564263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021fa903642b3b947bc43eac6b8ad50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 4
+  _moveSpeed: 5
   _trigger: {fileID: 1145261501122674862}
   _rb: {fileID: 7813661080691683779}
   _attackTriggerScript: {fileID: 9062854883553646960}
@@ -380,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a236e3191076748479895ce485ab2c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 1
+  _life: 3
   blast: 0
   _attackTrigger: {fileID: 9062854883553646960}
   _enemyScore: 1
