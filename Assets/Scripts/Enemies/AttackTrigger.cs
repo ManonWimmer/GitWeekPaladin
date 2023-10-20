@@ -53,6 +53,7 @@ public class AttackTrigger : MonoBehaviour
     public IEnumerator DeadDelay()
     {
         IsDead = true;
+        Debug.Log("dead delay");
         isMoving = false;
         IsExploded = false;
         yield return new WaitForSeconds(_animationDeadTime);

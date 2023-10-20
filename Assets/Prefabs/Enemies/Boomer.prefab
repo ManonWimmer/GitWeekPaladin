@@ -163,9 +163,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.086830616, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 7.1834226
+  m_Radius: 3.297749
 --- !u!114 &6105070461227564263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +180,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _colliderBlast: {fileID: 3947959351686823833}
   enemy: {fileID: 8866545093098537255}
-  _trigger: {fileID: 9062854883553646960}
 --- !u!1 &8866545093098537255
 GameObject:
   m_ObjectHideFlags: 0
