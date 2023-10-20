@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1834027927239471836}
   - component: {fileID: 7914057576704444335}
   - component: {fileID: 968060318271134400}
+  - component: {fileID: 8405228991722873932}
   m_Layer: 0
   m_Name: Crystal
   m_TagString: Crystal
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77b90971cc4e8364ebb5c7cb409dc684, type: 3}
   m_Color: {r: 0, g: 0.6623254, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,7 +115,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 7
 --- !u!114 &7914057576704444335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +144,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneName: DefeatScene_Finished
+--- !u!95 &8405228991722873932
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307441547802599775}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71a9c879b613b8b42aa5b0b0ef88f9eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8697849842412413505
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8699866935021734437}
-  - component: {fileID: 8073346268621705730}
+  - component: {fileID: 871791012925360339}
   m_Layer: 0
   m_Name: Crystal
   m_TagString: Crystal
@@ -175,8 +197,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5777452775662560071}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8073346268621705730
-CircleCollider2D:
+--- !u!70 &871791012925360339
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -207,6 +229,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0.0073948205, y: 0.025881847}
+  m_Size: {x: 0.31512988, y: 0.7633659}
+  m_Direction: 0
