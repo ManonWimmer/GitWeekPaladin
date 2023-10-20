@@ -6,27 +6,47 @@ using UnityEngine.Windows;
 public class MovementEnemy : MonoBehaviour
 {
     [SerializeField] int _moveSpeed;
-    [SerializeField] Collider2D _attackTrigger;
-    [SerializeField] Rigidbody2D _enemy;
-    [SerializeField] AttackTrigger attackTrigger;
+    [SerializeField] Collider2D _trigger;
+    [SerializeField] Rigidbody2D _rb;
+    [SerializeField] AttackTrigger _attackTriggerScript;
+
+    private bool _isFacingRight = false;
+    [SerializeField] SpriteRenderer _spriteRenderer;
+
+    // Anim :
+    [SerializeField] Animator _anim;
     private void FixedUpdate()
     {
-        if (attackTrigger.isMoving)
+        if (_attackTriggerScript.isMoving)
         {
             Vector3 direction = LifeCrystal.Instance.transform.position - transform.position;
             direction.Normalize();
             transform.position += direction * _moveSpeed * Time.fixedDeltaTime;
             if (direction.x > 0)
             {
-                _attackTrigger.offset = new Vector2(0.7f,0);
+                _trigger.offset = new Vector2(0.7f, 0);
+                _spriteRenderer.flipX = false;
             }
-            
         }
-        if (attackTrigger.isMoving == false)
+        if (_attackTriggerScript.isMoving == false)
         {
-            _enemy.constraints= RigidbodyConstraints2D.FreezeAll;
+            _rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
-}
 
+    private void Update()
+    {
+        UpdateAnimator();
+    }
+
+    private void UpdateAnimator()
+    {
+        if (gameObject.CompareTag("EnemyBlast"))
+        {
+            _anim.SetBool("isExploding", _attackTriggerScript.IsExploded);
+        }
+
+        _anim.SetBool("isDead", _attackTriggerScript.IsDead);
+    }
+}
 

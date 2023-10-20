@@ -5,34 +5,42 @@ using UnityEngine;
 
 public class LifeEnemy : MonoBehaviour
 {
-    public static LifeEnemy Instance { get; private set;}
+
     [SerializeField] int _life;
     bool inTrigger=false;
     public bool blast=false;
-    private void Awake()
-    {
-        Instance = this; 
-    }
+    [SerializeField] AttackTrigger _attackTrigger;
+    [SerializeField] float _enemyScore;
+    
     
     public int Life { get => _life; private set => _life = value; }
 
     public void EnemyTakeDamage()
     {
         Life -=1 ;
-        EnemyDie(Life);
+        EnemyDie(Life, true);
     }
-
-    void EnemyDie(int life)
+    public void EnemyTakeBlast()
     {
-        if(life <= 0 && gameObject.CompareTag("EnemyBlast"))
+        Debug.Log("take blast");
+        Life -= 3;
+        EnemyDie(Life, false);
+    }
+    void EnemyDie(int life, bool allowBlast)
+    {
+        Debug.Log("enemy die");
+        if(life <= 0 && gameObject.CompareTag("EnemyBlast") && allowBlast)
         {
+            Debug.Log("la");
             blast = true;
         }
         else if (life <= 0)
         {
-            Destroy(gameObject);
+            Debug.Log("ici");
+            StartCoroutine(_attackTrigger.DeadDelay());
+            //Destroy(gameObject);
         }
-    }
 
-    
+        ScoreManager.Instance.OnEnemyKilled(_enemyScore);
+    }
 }

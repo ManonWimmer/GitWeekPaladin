@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6511655509994948770}
   - component: {fileID: 1834027927239471836}
   - component: {fileID: 7914057576704444335}
+  - component: {fileID: 968060318271134400}
   m_Layer: 0
   m_Name: Crystal
   m_TagString: Crystal
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307441547802599775}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.98, y: -5.57, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
@@ -128,6 +129,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeCrystal: 50
   slider: {fileID: 0}
+  _loadingDefeatScene: {fileID: 968060318271134400}
+--- !u!114 &968060318271134400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307441547802599775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62122527c2b58584c81080049c559378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: DefeatScene
 --- !u!1 &8697849842412413505
 GameObject:
   m_ObjectHideFlags: 0
