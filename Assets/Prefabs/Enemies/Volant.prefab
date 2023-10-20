@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021fa903642b3b947bc43eac6b8ad50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 8
+  _moveSpeed: 5
   _trigger: {fileID: 7279745063628682564}
   _rb: {fileID: 1251686248722614264}
   _attackTriggerScript: {fileID: 4434668227659844320}
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a236e3191076748479895ce485ab2c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 2
+  _life: 1
   blast: 0
   _attackTrigger: {fileID: 4434668227659844320}
   _enemyScore: 5
