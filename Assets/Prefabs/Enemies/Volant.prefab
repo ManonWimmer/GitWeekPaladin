@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMoving: 1
   _enemy: {fileID: 2366777080992264376}
+  _prefabFireBall: {fileID: 0}
   _enemyForce: 1
   IsDead: 0
   _animationDeadTime: 0.75
@@ -204,6 +205,7 @@ MonoBehaviour:
   _trigger: {fileID: 7279745063628682564}
   _rb: {fileID: 1251686248722614264}
   _attackTriggerScript: {fileID: 4434668227659844320}
+  _fireBall: {fileID: 3742299018627026885, guid: bfed01f486335da42b76aedf61f01111, type: 3}
   _spriteRenderer: {fileID: 2350141487201145888}
   _anim: {fileID: 1740243618061082219}
 --- !u!61 &5594594780264569487
